@@ -116,15 +116,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 ////to swipe left
@@ -152,13 +143,6 @@
         else if(ViewX==-85.000000)//-85.000000
         {
         }
-//        else
-//        {
-//            self.TabButtonsView.frame = CGRectOffset(self.TabButtonsView.frame, -90.0, 0.0);
-//            
-//        }
-        
-        //  member=@"removed";
         
     }];
     
@@ -173,7 +157,6 @@
         if(ViewX==-175.000000)//-85.000000
         {
             self.TabButtonsView.frame = CGRectOffset(self.TabButtonsView.frame, 175.0, 0.0);//85.0
-           // swipe=@"left";
         }
         
         else if(ViewX==-85.000000)
