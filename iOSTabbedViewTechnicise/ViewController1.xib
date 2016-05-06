@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController1">
             <connections>
+                <outlet property="ShowMemberOutlet" destination="XkI-ag-gH4" id="4P9-jc-2Ya"/>
                 <outlet property="TabButtonsView" destination="sYY-e2-2lc" id="ELy-02-MCd"/>
                 <outlet property="label1" destination="c8R-Hh-6lJ" id="Voo-V7-D6h"/>
                 <outlet property="memberRemoveOutlet" destination="fxb-M1-n9q" id="epe-Od-ZhQ"/>
@@ -32,10 +33,18 @@
                         <action selector="RemoveMember:" destination="-1" eventType="touchUpInside" id="Ov4-Ay-aqP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkI-ag-gH4">
+                    <rect key="frame" x="85" y="468" width="156" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Show Member tab"/>
+                    <connections>
+                        <action selector="ShowMember:" destination="-1" eventType="touchUpInside" id="MV4-h1-4LG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="700" y="208"/>
+            <point key="canvasLocation" x="815" y="400"/>
         </view>
         <view contentMode="scaleToFill" id="sYY-e2-2lc" userLabel="TabButtonsView">
             <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>

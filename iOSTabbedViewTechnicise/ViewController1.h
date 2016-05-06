@@ -16,4 +16,9 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *memberRemoveOutlet;
 
+- (IBAction)ShowMember:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *ShowMemberOutlet;
+
+
 @end
