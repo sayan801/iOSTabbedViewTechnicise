@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		9F2E5ACD1CD7A4D90029209B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E5ACC1CD7A4D90029209B /* main.m */; };
 		9F2E5AD01CD7A4D90029209B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E5ACF1CD7A4D90029209B /* AppDelegate.m */; };
-		9F2E5AD31CD7A4D90029209B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E5AD21CD7A4D90029209B /* ViewController.m */; };
 		9F2E5AD61CD7A4D90029209B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E5AD41CD7A4D90029209B /* Main.storyboard */; };
 		9F2E5AD91CD7A4D90029209B /* iOSTabbedViewTechnicise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E5AD71CD7A4D90029209B /* iOSTabbedViewTechnicise.xcdatamodeld */; };
 		9F2E5ADB1CD7A4D90029209B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E5ADA1CD7A4D90029209B /* Assets.xcassets */; };
 		9F2E5ADE1CD7A4D90029209B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E5ADC1CD7A4D90029209B /* LaunchScreen.storyboard */; };
 		9F2E5AE91CD7A4D90029209B /* iOSTabbedViewTechniciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E5AE81CD7A4D90029209B /* iOSTabbedViewTechniciseTests.m */; };
 		9F2E5AF41CD7A4D90029209B /* iOSTabbedViewTechniciseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E5AF31CD7A4D90029209B /* iOSTabbedViewTechniciseUITests.m */; };
+		9F30B16C1CDC3A8900FCF4B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F30B16B1CDC3A8900FCF4B4 /* UIKit.framework */; };
+		9F30B16E1CDC3A9100FCF4B4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F30B16D1CDC3A9100FCF4B4 /* CoreData.framework */; };
+		9F30B1701CDC3A9D00FCF4B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F30B16F1CDC3A9D00FCF4B4 /* Foundation.framework */; };
+		9F30B1741CDC3B9200FCF4B4 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30B1721CDC3B9200FCF4B4 /* ViewController1.m */; };
+		9F30B1751CDC3B9200FCF4B4 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F30B1731CDC3B9200FCF4B4 /* ViewController1.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +44,6 @@
 		9F2E5ACC1CD7A4D90029209B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F2E5ACE1CD7A4D90029209B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F2E5ACF1CD7A4D90029209B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9F2E5AD11CD7A4D90029209B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9F2E5AD21CD7A4D90029209B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9F2E5AD51CD7A4D90029209B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F2E5AD81CD7A4D90029209B /* iOSTabbedViewTechnicise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSTabbedViewTechnicise.xcdatamodel; sourceTree = "<group>"; };
 		9F2E5ADA1CD7A4D90029209B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +55,12 @@
 		9F2E5AEF1CD7A4D90029209B /* iOSTabbedViewTechniciseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTabbedViewTechniciseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2E5AF31CD7A4D90029209B /* iOSTabbedViewTechniciseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTabbedViewTechniciseUITests.m; sourceTree = "<group>"; };
 		9F2E5AF51CD7A4D90029209B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F30B16B1CDC3A8900FCF4B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9F30B16D1CDC3A9100FCF4B4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9F30B16F1CDC3A9D00FCF4B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9F30B1711CDC3B9200FCF4B4 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		9F30B1721CDC3B9200FCF4B4 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		9F30B1731CDC3B9200FCF4B4 /* ViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F30B1701CDC3A9D00FCF4B4 /* Foundation.framework in Frameworks */,
+				9F30B16E1CDC3A9100FCF4B4 /* CoreData.framework in Frameworks */,
+				9F30B16C1CDC3A8900FCF4B4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,9 @@
 		9F2E5ABF1CD7A4D90029209B = {
 			isa = PBXGroup;
 			children = (
+				9F30B16F1CDC3A9D00FCF4B4 /* Foundation.framework */,
+				9F30B16D1CDC3A9100FCF4B4 /* CoreData.framework */,
+				9F30B16B1CDC3A8900FCF4B4 /* UIKit.framework */,
 				9F2E5ACA1CD7A4D90029209B /* iOSTabbedViewTechnicise */,
 				9F2E5AE71CD7A4D90029209B /* iOSTabbedViewTechniciseTests */,
 				9F2E5AF21CD7A4D90029209B /* iOSTabbedViewTechniciseUITests */,
@@ -105,8 +119,9 @@
 			children = (
 				9F2E5ACE1CD7A4D90029209B /* AppDelegate.h */,
 				9F2E5ACF1CD7A4D90029209B /* AppDelegate.m */,
-				9F2E5AD11CD7A4D90029209B /* ViewController.h */,
-				9F2E5AD21CD7A4D90029209B /* ViewController.m */,
+				9F30B1711CDC3B9200FCF4B4 /* ViewController1.h */,
+				9F30B1721CDC3B9200FCF4B4 /* ViewController1.m */,
+				9F30B1731CDC3B9200FCF4B4 /* ViewController1.xib */,
 				9F2E5AD41CD7A4D90029209B /* Main.storyboard */,
 				9F2E5ADA1CD7A4D90029209B /* Assets.xcassets */,
 				9F2E5ADC1CD7A4D90029209B /* LaunchScreen.storyboard */,
@@ -248,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F2E5ADE1CD7A4D90029209B /* LaunchScreen.storyboard in Resources */,
+				9F30B1751CDC3B9200FCF4B4 /* ViewController1.xib in Resources */,
 				9F2E5ADB1CD7A4D90029209B /* Assets.xcassets in Resources */,
 				9F2E5AD61CD7A4D90029209B /* Main.storyboard in Resources */,
 			);
@@ -274,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2E5AD31CD7A4D90029209B /* ViewController.m in Sources */,
+				9F30B1741CDC3B9200FCF4B4 /* ViewController1.m in Sources */,
 				9F2E5AD01CD7A4D90029209B /* AppDelegate.m in Sources */,
 				9F2E5ACD1CD7A4D90029209B /* main.m in Sources */,
 				9F2E5AD91CD7A4D90029209B /* iOSTabbedViewTechnicise.xcdatamodeld in Sources */,
@@ -503,6 +519,7 @@
 				9F2E5AFA1CD7A4D90029209B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F2E5AFB1CD7A4D90029209B /* Build configuration list for PBXNativeTarget "iOSTabbedViewTechniciseTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +528,7 @@
 				9F2E5AFD1CD7A4D90029209B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F2E5AFE1CD7A4D90029209B /* Build configuration list for PBXNativeTarget "iOSTabbedViewTechniciseUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +537,7 @@
 				9F2E5B001CD7A4D90029209B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
