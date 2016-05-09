@@ -227,6 +227,9 @@
     /// Remove Member tab button
     [self RemoveButtons];
     
+    
+    previousselectindex=NSNotFound;
+    
     [self CreatingTabButtons:TabButtonsArray];
     
     
@@ -280,6 +283,7 @@
     
     TabButtonsArray = [[NSMutableArray alloc] initWithObjects:@"Home",@"Discussions",@"Resources",@"Polls/Questions",@"Members",@"About",nil];
     
+     previousselectindex=NSNotFound;
     
     [self CreatingTabButtons:TabButtonsArray];
     
@@ -414,6 +418,47 @@
         tabLabel1.backgroundColor=[UIColor whiteColor];
         
         previousselectindex=selectedTabButtonId;
+    }
+    
+    
+    
+    UIButton *ClickedTabButton =TabButtonsArrayAll[selectedTabButtonId];
+    if([[TabButtonsArray objectAtIndex:selectedTabButtonId] isEqualToString:@"Home"])
+    {
+        [ClickedTabButton addTarget:self
+         action:@selector(aMethod1)
+         forControlEvents:UIControlEventTouchUpInside];
+    }
+    else if([[TabButtonsArray objectAtIndex:selectedTabButtonId] isEqualToString:@"Discussions"])
+    {
+        [ClickedTabButton addTarget:self
+                       action:@selector(aMethod2)
+                             forControlEvents:UIControlEventTouchUpInside];
+    }
+    else if([[TabButtonsArray objectAtIndex:selectedTabButtonId] isEqualToString:@"Resources"])
+    {
+        [ClickedTabButton addTarget:self
+                         action:@selector(aMethod3)
+                               forControlEvents:UIControlEventTouchUpInside];
+    }
+    else if([[TabButtonsArray objectAtIndex:selectedTabButtonId] isEqualToString:@"Polls/Questions"])
+    {
+        [ClickedTabButton addTarget:self
+                    action:@selector(aMethod4)
+                           forControlEvents:UIControlEventTouchUpInside];
+    }
+    else if([[TabButtonsArray objectAtIndex:selectedTabButtonId] isEqualToString:@"Members"])
+    {
+        [ClickedTabButton addTarget:self
+                       action:@selector(aMethod5)
+                           forControlEvents:UIControlEventTouchUpInside];
+    }
+    else if([[TabButtonsArray objectAtIndex:selectedTabButtonId] isEqualToString:@"About"])
+    {
+        [ClickedTabButton addTarget:self
+                     action:@selector(aMethod6)
+                          forControlEvents:UIControlEventTouchUpInside];
+        
     }
     
 }
