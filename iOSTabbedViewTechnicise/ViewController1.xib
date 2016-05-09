@@ -47,11 +47,11 @@
             <point key="canvasLocation" x="815" y="400"/>
         </view>
         <view contentMode="scaleToFill" id="sYY-e2-2lc" userLabel="TabButtonsView">
-            <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="500" height="31"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="318" y="610.5"/>
+            <point key="canvasLocation" x="687" y="741.5"/>
         </view>
     </objects>
 </document>

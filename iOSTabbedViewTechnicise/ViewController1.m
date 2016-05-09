@@ -26,6 +26,10 @@
     NSMutableArray *TabButtonsArray;
     NSMutableArray *TabButtonsArrayAll;
     UIButton *TabButtons;
+    UILabel *TabLowerLabels;
+    NSMutableArray *TabLowerLabelsArrayAll;
+    NSUInteger previousselectindex;
+    
 
 }
 
@@ -33,7 +37,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
+    previousselectindex=NSNotFound;
+    
     TabButtonsArrayAll=[[NSMutableArray alloc]init];
+    TabLowerLabelsArrayAll=[[NSMutableArray alloc]init];
     
     TabButtonsArray = [[NSMutableArray alloc] initWithObjects:@"Home",@"Discussions",@"Resources",@"Polls/Questions",@"Members",@"About",nil];
     
@@ -201,6 +209,27 @@
 
 - (IBAction)RemoveMember:(id)sender {
     
+    [self removeTabButtons];
+    
+    [self.memberRemoveOutlet setHidden:YES];
+    [self.ShowMemberOutlet setHidden:NO];
+    
+    
+    [TabButtonsArrayAll removeAllObjects];
+    [TabLowerLabelsArrayAll removeAllObjects];
+    
+    [TabButtons removeFromSuperview];
+    [TabLowerLabels removeFromSuperview];
+    
+    [self.TabButtonsView removeFromSuperview];
+    
+    
+    /// Remove Member tab button
+    [self RemoveButtons];
+    
+    [self CreatingTabButtons:TabButtonsArray];
+    
+    
     /*
     
     member=@"removed";
@@ -220,7 +249,6 @@
         NSLog(@"00");
       self.TabButtonsView.frame = CGRectOffset(self.TabButtonsView.frame, -90.0, 0.0);
     }
-    
     AboutButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [AboutButton addTarget:self
                     action:@selector(aMethod6)
@@ -230,23 +258,168 @@
     [AboutButton setBackgroundColor:[UIColor blackColor]];
     [self.TabButtonsView addSubview:AboutButton];
     
-    
     [self.ShowMemberOutlet setHidden:NO];
      */
    
     
 }
 - (IBAction)ShowMember:(id)sender {
-    [self.TabButtonsView removeFromSuperview];
+    [self removeTabButtons];
     
     [self.ShowMemberOutlet setHidden:YES];
     
     [self.memberRemoveOutlet setHidden:NO];
     
-    member=@"";
-    [self CreateTabButtons];
+    [TabButtonsArrayAll removeAllObjects];
+    [TabLowerLabelsArrayAll removeAllObjects];
+    
+    [TabButtons removeFromSuperview];
+    [TabLowerLabels removeFromSuperview];
+    
+    [self.TabButtonsView removeFromSuperview];
+    
+    TabButtonsArray = [[NSMutableArray alloc] initWithObjects:@"Home",@"Discussions",@"Resources",@"Polls/Questions",@"Members",@"About",nil];
+    
+    
+    [self CreatingTabButtons:TabButtonsArray];
+    
     
 }
+
+
+-(void)RemoveButtons
+{
+  [TabButtonsArray removeObjectAtIndex:[TabButtonsArray indexOfObject:@"Members"]];
+    
+  //[TabButtonsArray removeObjectAtIndex:[TabButtonsArray indexOfObject:@"Resources"]];
+    
+    
+}
+
+
+
+//// Creating tab buttons dynamically
+
+-(void)CreatingTabButtons:(NSArray *)Array
+{
+    
+    for (NSUInteger k=0; k<Array.count; k++)
+    {
+        NSLog(@"array=%@",[Array objectAtIndex:k]);
+        
+        TabButtons=[[UIButton alloc]initWithFrame:CGRectMake(0+105*k, 0.0, 105, 25.0)];
+        TabButtons.titleLabel.textAlignment=NSTextAlignmentCenter;
+        [TabButtons setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [TabButtons setTitle:[Array objectAtIndex:k] forState:UIControlStateNormal];
+        TabButtons.tag=k;
+        [TabButtons addTarget:self
+                   action:@selector(buttonPressedMethod:)
+         forControlEvents:UIControlEventTouchDown];
+        [TabButtonsArrayAll addObject:TabButtons];
+        
+       // [_TabButtonsView addSubview:TabButtons];
+        
+        /// Tab lower label
+        
+        TabLowerLabels=[[UILabel alloc]initWithFrame:CGRectMake(0+105*k, 23, 100, 3)];
+        TabLowerLabels.backgroundColor=[UIColor whiteColor];
+        TabLowerLabels.tag=k;
+        [TabLowerLabelsArrayAll addObject:TabLowerLabels];
+        //[self.TabButtonsView addSubview:TabLowerLabels];
+        
+    }
+    
+   // self.view_for_buttons.frame=CGRectMake(0, 144, 470, 26);
+    
+    [self drawTabButtons];
+    
+    
+    UILabel *SingleLineLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 26, Array.count*105, 2)];
+    SingleLineLabel.backgroundColor=[UIColor greenColor];
+    [self.TabButtonsView addSubview:SingleLineLabel];
+    
+    
+     self.TabButtonsView.frame = CGRectMake(0, 220, 600, 60);
+    [self.view addSubview:self.TabButtonsView];
+}
+
+
+
+- (void)drawTabButtons {
+    [_TabButtonsView removeFromSuperview];
+    for(UIButton *tabButton in self->TabButtonsArrayAll)
+    {
+        [_TabButtonsView addSubview:tabButton];
+        
+    }
+    
+    for(UILabel *tabLabel in self->TabLowerLabelsArrayAll)
+    {
+        [_TabButtonsView addSubview:tabLabel];
+        
+    }
+}
+
+
+- (void)removeTabButtons {
+    for(UIButton *tabButton in self->TabButtonsArrayAll)
+    {
+        [tabButton removeFromSuperview];
+        
+    }
+    
+    for(UILabel *tabLabel in self->TabLowerLabelsArrayAll)
+    {
+        [tabLabel removeFromSuperview];
+        
+    }
+}
+
+
+- (void) buttonPressedMethod : (id) sender {
+    
+    UIButton *selectedButton = (UIButton *)sender;
+    
+    NSUInteger selectedTabButtonId = selectedButton.tag;
+    
+    
+    UILabel *selectedLabel = (UILabel *)sender;
+    
+    NSUInteger selectedTabLabelId = selectedLabel.tag;
+    
+    if (previousselectindex==NSNotFound)
+    {
+        UIButton *tabButton =TabButtonsArrayAll[selectedTabButtonId];
+        [tabButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        
+        UILabel *tabLabel =TabLowerLabelsArrayAll[selectedTabLabelId];
+        tabLabel.backgroundColor=[UIColor greenColor];
+        
+        previousselectindex=selectedTabButtonId;
+    }
+    else if (previousselectindex!=selectedTabButtonId)
+    {
+        UIButton *tabButton =TabButtonsArrayAll[selectedTabButtonId];
+        [tabButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        
+        
+        UILabel *tabLabel =TabLowerLabelsArrayAll[selectedTabLabelId];
+        tabLabel.backgroundColor=[UIColor greenColor];
+        
+        //unchange previous tab button
+        UIButton *tabButton1 =TabButtonsArrayAll[previousselectindex];
+        [tabButton1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        
+        UILabel *tabLabel1 =TabLowerLabelsArrayAll[previousselectindex];
+        tabLabel1.backgroundColor=[UIColor whiteColor];
+        
+        previousselectindex=selectedTabButtonId;
+    }
+    
+}
+
+
+/*
 
 -(void)CreateTabButtons
 {
@@ -258,7 +431,7 @@
     [HomeButton setBackgroundColor:[UIColor blackColor]];
     if([passValue isEqualToString:@"Home"])
     {
-    [HomeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        [HomeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     }
     HomeButton.frame = CGRectMake(0.0, 0.0, 80.0, 35.0);
     [self.TabButtonsView addSubview:HomeButton];
@@ -337,84 +510,8 @@
     self.TabButtonsView.frame = CGRectMake(0, 174, 600, 60);
     [self.view addSubview:self.TabButtonsView];
     
-
-}
-
--(void)RemoveButtons
-{
-  [TabButtonsArray removeObjectAtIndex:[TabButtonsArray indexOfObject:@"Members"]];
-    
-  [TabButtonsArray removeObjectAtIndex:[TabButtonsArray indexOfObject:@"Resources"]];
-}
-
-
-
-//// Creating tab buttons dynamically
-
--(void)CreatingTabButtons:(NSArray *)Array
-{
-    
-    /// Remove Member and Resource buttons
-    
-    [self RemoveButtons];
-    
-    
-    for (NSUInteger k=0; k<Array.count; k++)
-    {
-        NSLog(@"array=%@",[Array objectAtIndex:k]);
-        
-        TabButtons=[[UIButton alloc]initWithFrame:CGRectMake(0+105*k, 0.0, 105, 25.0)];
-        TabButtons.titleLabel.textAlignment=NSTextAlignmentCenter;
-        
-        [TabButtons setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        
-        [TabButtons setTitle:[Array objectAtIndex:k] forState:UIControlStateNormal];
-       
-        TabButtons.tag=k;
-        
-        [TabButtons addTarget:self
-                   action:@selector(buttonPressedMethod:)
-         forControlEvents:UIControlEventTouchDown];
-        
-        [_TabButtonsView addSubview:TabButtons];
-        
-        [TabButtonsArrayAll addObject:TabButtons];
-        
-        
-        
-        UILabel *Label2=[[UILabel alloc]initWithFrame:CGRectMake(0+105*k, 23, 100, 3)];
-        Label2.backgroundColor=[UIColor greenColor];
-        [_TabButtonsView addSubview:Label2];
-        
-    }
-    
-   // self.view_for_buttons.frame=CGRectMake(0, 144, 470, 26);
-    
-     self.TabButtonsView.frame = CGRectMake(0, 220, 600, 60);
-    [self.view addSubview:self.TabButtonsView];
-}
-
-
-
-- (void) buttonPressedMethod : (id) sender {
-    
-    UIButton *selectedButton = (UIButton *)sender;
-    
-    for(selectedButton in TabButtonsArrayAll)
-    {
-    
-    if (selectedButton.tag == 0)
-    {
-        [selectedButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-        
-    }
-    else
-    {
-        [selectedButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    }
-        
-    }
     
 }
+ */
 
 @end
