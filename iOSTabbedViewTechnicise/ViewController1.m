@@ -298,7 +298,7 @@
 
 
 
-//// Creating tab buttons dynamically
+//// Creating tab buttons dynamically as per needed
 
 -(void)CreatingTabButtons:(NSArray *)Array
 {
